@@ -1,22 +1,23 @@
 import Head from 'next/head';
 import {useContext} from 'react';
 import { Context } from '../lib/Context';
+import Header from '../components/Header';
 
 export default function Home() {
 
   const {
-    message
+    t, darkTheme
   } = useContext(Context);
 
   return (
-    <div className="my-container">
+    <div className={`page ${darkTheme ? "dark-theme" : ""}`}>
       <Head>
-        <title>Hello Hyur</title>
+        <title>Sendor LLC</title>
         <meta name="description" content="Created by Hyur" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>{message}</h1>
+      <Header/>
 
     </div>
   )
